@@ -9130,11 +9130,11 @@ To minimize surprises: traditional enums convert to int too readily.
     void Print_color(int color);
 
     enum Web_color { red = 0xFF0000, green = 0x00FF00, blue = 0x0000FF };
-    enum Product_info { red = 0, purple = 1, blue = 2 };
+    enum Product_info { red_ = 0, purple = 1, blue_ = 2 };
 
     Web_color webby = Web_color::blue;
 
-    // Clearly at least one of these calls is buggy.
+    // Values of unscoped enumeration type are implicitly-convertible to integral types.
     Print_color(webby);
     Print_color(Product_info::blue);
 
